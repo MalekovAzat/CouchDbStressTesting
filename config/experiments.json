@@ -1,0 +1,54 @@
+{
+    "experimets": [
+        {
+            "name": "Scale clients count",
+            "execute": true,
+            "config": {
+                "changeProp": {
+                    "name": "clients_count",
+                    "min": 10,
+                    "max": 21,
+                    "step": 10
+                },
+                "constProp": {
+                    "count": 10,
+                    "json_size": 100,
+                    "json_height": 100,
+                    "json_arr_size": 5,
+                    "batch_size": 100
+                }
+            },
+            "chart": {
+                "set_title": "Change clients from 10 to 20",
+                "set_xlabel": "Clients count",
+                "set_ylabel": "Time distribution, sec",
+                "file_to_save": "ClientCountChange.png"
+            }
+        },
+        {
+            "name": "Scale document size",
+            "execute": true,
+            "config": {
+                "changeProp": {
+                    "name": "json_size",
+                    "min": 10,
+                    "max": 30,
+                    "step": 10
+                },
+                "constProp": {
+                    "count": 10,
+                    "json_height": 100,
+                    "json_arr_size": 5,
+                    "batch_size": 100,
+                    "clients_count": 10
+                }
+            },
+            "chart": {
+                "set_title": "Change json size",
+                "set_xlabel": "Json size, kbytes",
+                "set_ylabel": "Time distribution, sec",
+                "file_to_save": "JsonSizeChange.png"
+            }
+        }
+    ]
+}

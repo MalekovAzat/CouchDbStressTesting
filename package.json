@@ -1,0 +1,37 @@
+{
+  "name": "couchdbtester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.html",
+  "window": {
+    "icon": "assets/icon.png",
+    "height": 500,
+    "width": 400,
+    "resizable": true,
+    "title": "Hello World, NW.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-nw": "nwbuild --version 0.68.0 --mode run --platform osx --flavour normal --architecture x64 --buildDir dist/ --cacheDir /Users/malekov/Documents/CouchDBExperiments/CouchDBTester/nwjs.app/Contents/MacOS/nwjs ./",
+    "run-main": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MalekovAzat/CouchDBTester.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MalekovAzat/CouchDBTester/issues"
+  },
+  "homepage": "https://github.com/MalekovAzat/CouchDBTester#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "nw-builder": "^4.0.0-rc.5",
+    "pouchdb": "^7.3.0",
+    "pouchdb-node": "^7.3.0",
+    "sizeof": "^1.0.0",
+    "uuid": "^9.0.0"
+  }
+}
