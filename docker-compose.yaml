@@ -1,15 +1,19 @@
 version: "3.1"
 services:
-  couchDb:
-    build: ./dockerfiles/couchdb.dockerfile
+  couchdb:
+    build:
+      context: ./dockerfiles
+      dockerfile: couchdb.dockerfile
     environment:
       COUCHDB_USER: admin
       COUCHDB_PASSWORD: password
+      TZ: "Europe/Moscow"
     ports:
       - 5984:5984
     volumes:
      - ./couchdb-config:/opt/couchdb/etc/local.d/
      - ./couchdb-data:/opt/couchdb/data
+     - ./logs:/logs
     networks:
       - backend
   
