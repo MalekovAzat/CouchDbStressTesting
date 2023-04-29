@@ -1,0 +1,260 @@
+[
+    {
+        "name": "Эксперимент 1",
+        "description": "Данный эксперимент создает 10 документов по 10кб, записывает их в локальные бд,а после синхронизирует локальные бд с одной удаленной. Измеряется скорость записи и скорость синхронизации.",
+        "script": {
+            "path": "./src/build",
+            "name": "promise.write-and-sync.js",
+            "args": {
+                "doc_count": 10,
+                "local_client_count": [
+                    1,
+                    50,
+                    100,
+                    150,
+                    200
+                ],
+                "remote_client_count": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "json_size_bite": 81640,
+                "batch_size": 100,
+                "local_db_directory_path": "./databases/",
+                "remote_server_path": "http://127.0.0.1:5984/",
+                "output_file": "./res/exp_1_results.txt",
+                "rewriting_persentage": 0.1
+            }
+        },
+        "charts": {
+            "server_metrics": {
+                "data_source_path": ""
+            },
+            "client_metrics": {
+                "data_source_path": ""
+            }
+        },
+        "report": {
+            "place_in_write_table": true,
+            "place_in_rewrite_table": true
+        }
+    },
+    {
+        "name": "Эксперимент 2",
+        "description": "Данный эксперимент создает 10 документов по 10кб, записывает их в локальные бд,а после синхронизирует локальные бд с несколькими удаленными базами. Измеряется скорость записи и скорость синхронизации.",
+        "script": {
+            "path": "./src/build",
+            "name": "promise.write-and-sync.js",
+            "args": {
+                "doc_count": 10,
+                "local_client_count": [
+                    1,
+                    50,
+                    100,
+                    200,
+                    300
+                ],
+                "remote_client_count": [
+                    1,
+                    50,
+                    100,
+                    200,
+                    300
+                ],
+                "json_size_bite": 81640,
+                "batch_size": 100,
+                "local_db_directory_path": "./databases/",
+                "remote_server_path": "http://127.0.0.1:5984/",
+                "output_file": "./res/exp_2_results.txt",
+                "rewriting_persentage": 0.1
+            }
+        },
+        "charts": {
+            "server_metrics": {
+                "data_source_path": ""
+            },
+            "client_metrics": {
+                "data_source_path": ""
+            }
+        },
+        "report": {
+            "place_in_write_table": true,
+            "place_in_rewrite_table": true
+        }
+    },
+    {
+        "name": "Эксперимент 3",
+        "description": "Данный эксперимент создает 10 документов по 10кб, записывает их в локальные бд, и после того как всег файлы во всех локальных бд будут сохранены запрашивает полную синхронизацию с общей удаленной базой. Измеряется ТОЛЬКО скорость синхронизации.",
+        "script": {
+            "path": "./src/build",
+            "name": "promise.one-time-write-and-sync.js",
+            "args": {
+                "doc_count": 10,
+                "local_client_count": [
+                    1,
+                    50,
+                    100,
+                    200,
+                    300
+                ],
+                "remote_client_count": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "json_size_bite": 81640,
+                "batch_size": 100,
+                "local_db_directory_path": "./databases/",
+                "remote_server_path": "http://127.0.0.1:5984/",
+                "output_file": "./res/exp_2_results.txt",
+                "rewriting_persentage": 0.1
+            }
+        },
+        "charts": {
+            "server_metrics": {
+                "data_source_path": ""
+            },
+            "client_metrics": {
+                "data_source_path": ""
+            }
+        },
+        "report": {
+            "place_in_write_table": true,
+            "place_in_rewrite_table": true
+        }
+    },
+    {
+        "name": "Эксперимент 4",
+        "description": "Данный эксперимент создает 10 документов по 10кб, записывает их в локальные бд, и после того как всег файлы во всех локальных бд будут сохранены запрашивает полную синхронизацию с отдельными удаленными базами. Измеряется ТОЛЬКО скорость синхронизации.",
+        "script": {
+            "path": "./src/build",
+            "name": "promise.one-time-write-and-sync.js",
+            "args": {
+                "doc_count": 10,
+                "local_client_count": [
+                    1,
+                    50,
+                    100,
+                    200,
+                    300
+                ],
+                "remote_client_count": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "json_size_bite": 81640,
+                "batch_size": 100,
+                "local_db_directory_path": "./databases/",
+                "remote_server_path": "http://127.0.0.1:5984/",
+                "output_file": "./res/exp_2_results.txt",
+                "rewriting_persentage": 0.1
+            }
+        },
+        "charts": {
+            "server_metrics": {
+                "data_source_path": ""
+            },
+            "client_metrics": {
+                "data_source_path": ""
+            }
+        },
+        "report": {
+            "place_in_write_table": true,
+            "place_in_rewrite_table": true
+        }
+    },
+    {
+        "name": "Эксперимент 5",
+        "description": "Данный эксперимент создает 1000 документов по 1кб, записывает их в локальные бд, и после того как всег файлы во всех локальных бд будут сохранены запрашивает полную синхронизацию с отдельными удаленными базами. Измеряется ТОЛЬКО скорость синхронизации.",
+        "script": {
+            "path": "./src/build",
+            "name": "promise.one-time-write-and-sync.js",
+            "args": {
+                "doc_count": 1000,
+                "local_client_count": [
+                    1,
+                    50,
+                    100,
+                    200,
+                    300
+                ],
+                "remote_client_count": [
+                    1,
+                    50,
+                    100,
+                    200,
+                    300
+                ],
+                "json_size_bite": 8164,
+                "batch_size": 100,
+                "local_db_directory_path": "./databases/",
+                "remote_server_path": "http://127.0.0.1:5984/",
+                "output_file": "./res/exp_2_results.txt",
+                "rewriting_persentage": 0.1
+            }
+        },
+        "charts": {
+            "server_metrics": {
+                "data_source_path": ""
+            },
+            "client_metrics": {
+                "data_source_path": ""
+            }
+        },
+        "report": {
+            "place_in_write_table": true,
+            "place_in_rewrite_table": true
+        }
+    },
+    {
+        "name": "Эксперимент 6",
+        "description": "Данный эксперимент делает то же самое что и 5, но затем заменяет некоторую часть документов в каждой базе и запрашивает повторную синхронизацию. Измеряется ТОЛЬКО скорость повторной синхронизации.",
+        "script": {
+            "path": "./src/build",
+            "name": "promise.one-time-write-and-sync.js",
+            "args": {
+                "doc_count": 1000,
+                "local_client_count": [
+                    1,
+                    50,
+                    100,
+                    200,
+                    300
+                ],
+                "remote_client_count": [
+                    1,
+                    50,
+                    100,
+                    200,
+                    300
+                ],
+                "json_size_bite": 8164,
+                "batch_size": 100,
+                "local_db_directory_path": "./databases/",
+                "remote_server_path": "http://127.0.0.1:5984/",
+                "output_file": "./res/exp_2_results.txt",
+                "rewriting_persentage": 0.1
+            }
+        },
+        "charts": {
+            "server_metrics": {
+                "data_source_path": ""
+            },
+            "client_metrics": {
+                "data_source_path": ""
+            }
+        },
+        "report": {
+            "place_in_write_table": true,
+            "place_in_rewrite_table": true
+        }
+    }
+]

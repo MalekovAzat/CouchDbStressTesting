@@ -1,0 +1,36 @@
+{
+    "experiment_file_path": "./config/experiments.json",
+    "output_directory": "./results",
+    "charts": {
+        "server_metrics": {
+            "cpu": {
+                "y_label": "CPU usage, %",
+                "x_label": "Time, c"
+            },
+            "ram": {
+                "y_label": "Ram usage, kb",
+                "x_label": "Time, c"
+            }
+        },
+        "client_metrics": {
+            "x_label": "Clients count",
+            "y_label": "Time, ms"
+        }
+    },
+    "report": {
+        "desciption": {
+            "title": "",
+            "text": ""
+        },
+        "params": [
+            {
+                "title": "1",
+                "description": "11"
+            },
+            {
+                "title": "2",
+                "description": "22"
+            }
+        ]
+    }
+}

@@ -1,1 +1,10 @@
 node_modules
+.DS_Store
+charts
+conversation.txt
+couchdb-data/.DS_Store
+couchdb-data/shards/.DS_Store
+src/build/**
+**/__pycache__
+databases
+couch-db-server/data

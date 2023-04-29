@@ -1,54 +1,45 @@
-{
-    "experimets": [
-        {
-            "name": "Scale clients count",
-            "execute": true,
-            "config": {
-                "changeProp": {
-                    "name": "clients_count",
-                    "min": 10,
-                    "max": 21,
-                    "step": 10
-                },
-                "constProp": {
-                    "count": 10,
-                    "json_size": 100,
-                    "json_height": 100,
-                    "json_arr_size": 5,
-                    "batch_size": 100
-                }
-            },
-            "chart": {
-                "set_title": "Change clients from 10 to 20",
-                "set_xlabel": "Clients count",
-                "set_ylabel": "Time distribution, sec",
-                "file_to_save": "ClientCountChange.png"
+[
+    {
+        "name": "Эксперимент 1",
+        "description": "Данный эксперимент создает 10 документов по 10кб, записывает их в локальные бд, а после синхронизирует локальные бд с одной удаленной. Измеряется скорость записи и скорость синхронизации.",
+        "script": {
+            "path": "./src/build",
+            "name": "promise.write-and-sync.js",
+            "args": {
+                "doc_count": 10,
+                "local_client_count": [
+                    1,
+                    2
+                ],
+                "remote_client_count": [
+                    1,
+                    2
+                ],
+                "json_size_bite": 81640,
+                "batch_size": 100,
+                "local_db_directory_path": "./databases/",
+                "remote_server_path": "http://127.0.0.1:5984/",
+                "output_file": "exp_1_results.txt",
+                "rewriting_persentage": null
             }
         },
-        {
-            "name": "Scale document size",
-            "execute": true,
-            "config": {
-                "changeProp": {
-                    "name": "json_size",
-                    "min": 10,
-                    "max": 30,
-                    "step": 10
-                },
-                "constProp": {
-                    "count": 10,
-                    "json_height": 100,
-                    "json_arr_size": 5,
-                    "batch_size": 100,
-                    "clients_count": 10
-                }
+        "charts": {
+            "server_metrics": {
+                "data_source_path": "metric",
+                "output_dir": "",
+                "title": "Write and separate sync. 10 files 10 kb. CPU and RAM usage",
+                "cpu_title": "CPU",
+                "ram_title": "RAM"
             },
-            "chart": {
-                "set_title": "Change json size",
-                "set_xlabel": "Json size, kbytes",
-                "set_ylabel": "Time distribution, sec",
-                "file_to_save": "JsonSizeChange.png"
+            "client_metrics": {
+                "data_source_path": "",
+                "output_dir": "",
+                "title": "Write and separate sync. 10 files 10 kb. Delay."
             }
+        },
+        "report": {
+            "place_in_write_table": true,
+            "place_in_rewrite_table": true
         }
-    ]
-}
+    }
+]
